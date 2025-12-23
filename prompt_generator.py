@@ -68,8 +68,8 @@ def format_data_for_experiment(capability_file, style_file):
         # keys 应该是 'neutral' (作为输入), 'casual' (作为输出1), 'formal' (作为输出2)
         # 注意：这里可能需要根据你实际生成的 JSON key 做微调，下面按之前的 generate_style_pairs_dataset 代码逻辑适配
         content = item.get('neutral', '')       # The neutral input
-        casual_out = item.get('casual', '')     # The slang output
-        formal_out = item.get('formal', '')     # The academic output
+        casual_out = item.get('simple_explanation', '')     # The slang output
+        formal_out = item.get('advanced_explanation', '')     # The academic output
         
         if not content or not casual_out: continue
 
